@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 
 
 def error_message_details(error, error_detail: sys):
@@ -8,9 +8,7 @@ def error_message_details(error, error_detail: sys):
     error_message = "this error occoured because of python script filename[{0}], line no[{1}] message [{2}]".format(
         file_name, exc_tb.lineno, str(error)
     )
-
-
-return error_message
+    return error_message
 
 
 class CustomEXception(Exception):
@@ -24,10 +22,10 @@ class CustomEXception(Exception):
         return self.error_message
 
 
-# if __name__ =="__main__":
-
+# if __name__ == "__main__":
+#
 #    try:
-#        a=1/0
+#        a = 1 / 0
 #    except:
 #        logging.info("divide by zero error")
 #        raise CustomEXception
